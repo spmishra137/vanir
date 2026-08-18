@@ -10,10 +10,10 @@ import dataclasses
 import os
 from unittest import mock
 
+from absl import logging
+from absl.testing import absltest
 from vanir import signature
 from vanir.scanners import target_selection_strategy
-
-from absl.testing import absltest
 
 
 class TargetSelectionStrategyTest(absltest.TestCase):
@@ -152,6 +152,7 @@ class TargetSelectionStrategyTest(absltest.TestCase):
 
   # Adding new test for validating PR intake.
   def test_exact_path_match_strategy_from_file_set(self):
+    logging.info('Running test_exact_path_match_strategy_from_file_set in vanir/scanners/.')
     file_set = {'exact_match1.c', 'foo/exact_match2.c', 'no_match.c'}
     to_scan, skipped = (
         target_selection_strategy.Strategy.EXACT_PATH_MATCH.get_target_files_from_file_set(
