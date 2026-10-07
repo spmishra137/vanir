@@ -153,8 +153,8 @@ class TargetSelectionStrategyTest(absltest.TestCase):
   # Adding new test for validating PR intake.
   def test_exact_path_match_strategy_from_file_set(self):
     logging.info(
-        'Running test_exact_path_match_strategy_from_file_set in'
-        ' vanir/scanners/.'
+        'Running test_exact_path_match_strategy_from_file_set test from'
+        ' vanir/scanners/target_selection_strategy_test.py.'
     )
     file_set = {'exact_match1.c', 'foo/exact_match2.c', 'no_match.c'}
     strategy = target_selection_strategy.Strategy.EXACT_PATH_MATCH
